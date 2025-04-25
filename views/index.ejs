@@ -1,6 +1,7 @@
 <%- include("partials/header.ejs") %>
     <% if (!locals.posts) { %>
-        <h1> Hello my dear world!</h1>
+        <h1> Welcome to Blog.er! Here you may write eveything you want</h1>
+        <p> Press the button on the top right corner to START.</p>
     <% } else { %>
         <% for(let i = 0; i < posts.length; i+= 1) { %>
             <div class="card">
