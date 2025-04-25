@@ -48,6 +48,7 @@ app.post("/submit-save", (req, res) => { // From editPost to index
 app.post("/submit-delete", (req, res) => { // From index to index
     const i = req.body.num;
     posts.splice(i, 1); // deleting the post on i index
+    console.log(posts);
     res.render("index", {posts: posts});
 });
 

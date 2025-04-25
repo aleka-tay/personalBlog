@@ -1,5 +1,5 @@
 <%- include("partials/header.ejs") %>
-    <% if (!locals.posts) { %>
+    <% if (!locals.posts || locals.posts.length < 1) { %>
         <h1> Welcome to Blog.er! Here you may write eveything you want</h1>
         <p> Press the button on the top right corner to START.</p>
     <% } else { %>
