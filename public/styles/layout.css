@@ -1,0 +1,11 @@
+body{
+    min-height: 100vh;
+}
+.navbar {
+    background-color: #D49292;
+}
+
+footer{
+    background-color: #D49292;
+    bottom: 0;
+}
