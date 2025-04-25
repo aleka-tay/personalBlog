@@ -28,25 +28,27 @@ app.get("/editPost", (req, res) => {
 });
 
 // Post requests
-app.post("/submit", (req, res) => {
-    posts.push([req.body["title"], req.body["content"]]);
+
+app.post("/submit", (req, res) => { // From createPost to index
+    posts.push([req.body["title"], req.body["content"]]); // pushing the the contents to the array of posts
     res.render("index", {posts: posts});
 });
 
-app.post("/submit-edit", (req, res) => {
-    console.log(req.body.num);
-    res.render("editPost", {title: req.body.title, content: req.body.content, num: req.body.num});
+app.post("/submit-edit", (req, res) => { // From index to editPost
+    res.render("editPost", {title: req.body.title, content: req.body.content, num: req.body.num}); // senging requested post to editing
 });
 
-app.post("/submit-save", (req, res) => {
-    const i = req.body.num;
+app.post("/submit-save", (req, res) => { // From editPost to index
+    const i = req.body.num; // getting index of post to change value in posts
     posts[i][0] = req.body.title;
     posts[i][1] = req.body.content;
     res.render("index", {posts: posts});
 });
 
-app.post("/submit-delete", (req, res) => {
-
+app.post("/submit-delete", (req, res) => { // From index to index
+    const i = req.body.num;
+    posts.splice(i, 1); // deleting the post on i index
+    res.render("index", {posts: posts});
 });
 
 // Listening
