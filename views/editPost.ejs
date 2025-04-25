@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+<h2> Edit Post</h2>
+<form action="/submit-save" method="POST">
+    <div class="mb-3">
+        <input class="form-control" name="title" id="exampleFormControlInput1" value="<%= title %>">
+    </div>
+    <div class="mb-3">
+        <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3" > <%= content %></textarea>
+    </div>
+    <input type="hidden" name="num" value="<%= num %>"/>
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary" name="save">Save</button>
+    </div>
+</form>
+<%- include("partials/footer.ejs") %>

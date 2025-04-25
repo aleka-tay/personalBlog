@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") %>
+<h2> Create Post</h2>
+<form action="/submit" method="POST">
+    <div class="mb-3">
+        <input class="form-control" name="title" id="exampleFormControlInput1" placeholder="Title">
+    </div>
+    <div class="mb-3">
+        <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3" placeholder="Write to your heart's content"></textarea>
+    </div>
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">Post</button>
+    </div>
+</form>
+<%- include("partials/footer.ejs") %>
